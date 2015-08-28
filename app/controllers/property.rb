@@ -29,7 +29,16 @@ get "/property/:id" do
   erb :property
 end
 
+get "property/:id/edit" do
+  @edit_property = Property.find(params[:id])
+  erb :edit
+end
 
+get "property/:id/delete" do
+  @delete_property = Property.find(params[:id])
+  @delete_property.delete
+  erb :index
+end
 
 
 

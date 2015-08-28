@@ -1,10 +1,5 @@
 <div class="container">
-  <h1>Simple Airbnb</h1>
-
-
-
-<a href="/login"><button>Login</button></a>
-<a href="/signup"><button>Sign up</button></a>
+<br>
 <hr>
 
 <h3>hot properties!</h3>
@@ -13,8 +8,8 @@
   <p>Description: <%= p.description %></p>
   <p>Price: <%= p.price %></p>
   <p>Created by: <%= p.user.fullname %></p>
-  <% p.tags.each do |t| %>
-    <p>Tags: <a href="/tag"><%= t.tag %></a></p>
+  Tags:<% p.tags.each do |t| %>
+    <p> <a href="/tag/<%= t.tag %>"><%= t.tag %></a></p>
     <%end%>
 
   <p>---------</p>

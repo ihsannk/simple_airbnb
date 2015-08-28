@@ -1,14 +1,15 @@
 <div class="container">
-
-     <form >
-        <h3><%= @property.property_name %></h3>
-        <p>Description: <%= @property.description %></p>
-        <p>Price: <%= @property.price%></p>
-        <p>Tags: #showtags </p>
-        <p>Created by: <%= @property.user.fullname %></p>
-      </form>
-       <a href="/" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
-       <a href="/"><button>Home</button></a>
+  <form >
+ <h2>Tag: <%= @tag.tag %></h2>
+  <% @tag.properties.each do |t|%>
+    <h3><%= t.property_name %></h3>
+    <p>Description: <%= t.description %></p>
+    <p>Price: <%= t.price%></p>
+    <p>Created by: <%= t.user.fullname %></p>
+  </form>
+<% end %>
+    <a href="/" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
+     <a href="/"><button>Home</button></a>
 </div>
 
 <script>

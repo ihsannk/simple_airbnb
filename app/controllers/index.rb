@@ -1,7 +1,9 @@
 get '/' do
-  @property = Property.all
-  #unless session[:user_id] == ""
-  #@user = User.find_by(session[:user_id])
+  @property = Property.order(created_at: :desc)
   erb :index
+end
+
+get '/logout' do
+ session.clear
 end
 

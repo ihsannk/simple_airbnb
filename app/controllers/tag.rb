@@ -1,4 +1,4 @@
-get '/tag' do
-@property = Property.find_by(params[:tag])
-erb :tag
+get '/tag/:tag' do
+  @tag = Tag.find_by(tag: params[:tag])
+  erb :tag
 end
