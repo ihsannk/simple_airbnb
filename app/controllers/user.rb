@@ -4,4 +4,8 @@ get '/user/:id' do
   erb :user
 end
 
+get '/logout' do
+  session.clear
+  erb :index
+end
 

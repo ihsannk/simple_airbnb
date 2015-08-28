@@ -4,5 +4,6 @@
   @tag = Tag.create(tag: Faker::Hacker.noun)
 
   @property.tags << @tag
+  #@property.users << @user
 
 end
