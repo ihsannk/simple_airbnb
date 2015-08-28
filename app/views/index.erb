@@ -1,23 +1,21 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Welcome to Simple Airbnb</h1>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+
+<a href="/login"><button>Login</button></a>
+<a href="/signup"><button>Sign up</button></a>
+<hr>
+
+<p>hot properties!</p>
+<% @property.each do |p| %>
+  <p>Place: <a href="/property/<%= p.id %>"><%= p.property_name %></a></p>
+  <p>Description: <%= p.description %></p>
+  <p>Price: <%= p.price %></p>
+  <p>Tags: <%= p.tags %></p>
+  <p>---------</p>
+
+ <% end %>
+
+
 </div>
+

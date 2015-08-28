@@ -14,8 +14,8 @@ gem 'activesupport'
 gem 'activerecord'
 
 gem 'rake'
-
 gem 'shotgun'
+gem 'byebug'
 
 group :test do
   gem 'faker'

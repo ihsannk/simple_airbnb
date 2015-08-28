@@ -10,6 +10,8 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
+require 'faker'
+require 'byebug'
 
 require 'pg'
 require 'active_record'

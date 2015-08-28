@@ -1,0 +1,22 @@
+<div class="container">
+
+  <p>welcome <%= @user.fullname%></p>
+  <a href="/"><button> Home</button></a>
+  <a href="/"><button> Logout</button></a>
+
+
+
+    <p>list new property</p>
+     <form action="/property" method="post">
+        Place:<br>
+        <input type="text" name="input_property_name" placeholder="Property name">
+        <br>
+        Description:<br>
+        <input type="text" name="input_description" placeholder="Description"><br>
+        Price:<br><input type="text" name="input_price" placeholder="Price"><br>
+        Tags:<br><input type="text" name="input_tag" placeholder="Tags"><br>
+        <input type="submit" value="Submit">
+
+      </form>
+      <a href="/"><button> Cancel</button></a>
+</div>

@@ -1,4 +1,7 @@
 get '/' do
-  # Look in app/views/index.erb
+  @property = Property.all
+  #unless session[:user_id] == ""
+  #@user = User.find_by(session[:user_id])
   erb :index
 end
+
