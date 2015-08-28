@@ -1,18 +1,15 @@
-
-
 <div class="container">
-
-
 
      <form >
         <h3><%= @property.property_name %></h3>
-        <p><%= @property.description %></p>
-        <p><%= @property.price%></p>
-        <p> #showtags </p>
-        <p> #show user who create</p>
+        <p>Description: <%= @property.description %></p>
+        <p>Price: $<%= @property.price%></p>
+        Tags: <% @property.tags.each do |t|%>
+        <%= t.tag %>
+        <% end %>
       </form>
-       <a href="/" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
-       <a href="/"><button>Home</button></a>
+       <a href="/property/<%= @property.id %>" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
+       <a href="/" ><button>Home</button></a>
 </div>
 
 <script>

@@ -3,6 +3,10 @@
   @property = Property.create(property_name: Faker::Address.street_name, description: Faker::Company.catch_phrase, price: "100")
   @tag = Tag.create(tag: Faker::Hacker.noun)
 
+  @user.properties << @property
+  # @property.user_id = @user.id
+  # @property.save
+
   @property.tags << @tag
   #@property.users << @user
 

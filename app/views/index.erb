@@ -12,10 +12,11 @@
   <p>Place: <a href="/property/<%= p.id %>"><%= p.property_name %></a></p>
   <p>Description: <%= p.description %></p>
   <p>Price: <%= p.price %></p>
+  <p>Created by: <%= p.user.fullname %></p>
   <% p.tags.each do |t| %>
     <p>Tags: <a href="/tag"><%= t.tag %></a></p>
     <%end%>
-    <p>Created by: <%= p.user %></p>
+
   <p>---------</p>
 
  <% end %>
