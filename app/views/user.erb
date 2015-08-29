@@ -1,6 +1,6 @@
 <div class="container">
 
-  <p>welcome <%= @user.fullname%></p>
+  <h3>welcome <%= @user.fullname%></h3>
 
   <form action="/user/<%= @user.id%>" method="post">
     Full Name:
@@ -14,33 +14,50 @@
     <br>
     <input type="submit" value="Edit Profile">
   </form>
+    <a href="/user/<%= @user.id%>"><button>Cancel</button></a>
 
   <hr>
 
-  <p>list a new property below</p>
+  <h3>list a new property below</h3>
 
   <form action="/property" method="post">
-      Place:
-      <br>
-      <input type="text" name="input_property_name" placeholder="Property name">
-      <br>
-      Description:
-      <br>
-      <input type="text" name="input_description" placeholder="Description">
-      <br>
-      Price:<br><input type="text" name="input_price" placeholder="Price">
-      <br>
-      Tags:
-      <br>
-      <input type="text" name="input_tag" placeholder="Tags">
-      <br>
-      <input type="submit" value="Submit">
+    Place:
+    <br>
+    <input type="text" name="input_property_name" placeholder="Property name">
+    <br>
+    Description:
+    <br>
+    <input type="text" name="input_description" placeholder="Description">
+    <br>
+    Price:<br><input type="text" name="input_price" placeholder="Price">
+    <br>
+    Tags:
+    <br>
+    <input type="text" name="input_tag" placeholder="Tags">
+    <br>
+    <input type="submit" value="Submit">
   </form>
-  <a href="/"><button> Cancel</button></a>
+    <a href="/user/<%= @user.id%>"><button>Cancel</button></a>
 
   <hr>
 
-    your properties
+  <h3>Your properties</h3>
 
+  <form >
+
+    <% @user.properties.each do |t|%>
+    <h3><a href="/property/<%= t.id %>"><%= t.property_name %></a></h3>
+    <p>Description: <%= t.description %></p>
+    <p>Price: <%= t.price%></p>
+    <p>Created by: <%= t.user.fullname %></p>
+    <p>Email: <%= t.user.email %></p>
+    Tags: <% t.tags.each do |p|%>
+      <a href="/tag/<%= p.tag %>"><%= p.tag %></a>
+      <% end %>
+
+    <hr style="border: dotted 1px;" />
+  </form>
+<% end %>
 
 </div>
+

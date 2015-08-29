@@ -1,35 +1,28 @@
 <div class="container">
 
-   <form action="/property/<%= @property.id%>/edit" method="post">
-      <h3><%= @property.property_name %></h3>
-      <p>Description: <%= @property.description %></p>
-      <p>Price: $<%= @property.price%></p>
-      <p>Contact Person: <%= @property.user.fullname%></p>
-      <p>Email: <%= @property.user.email%></p>
-      Tags: <% @property.tags.each do |t|%>
-      <a href="/tag/<%= t.tag %>"><%= t.tag %></a>
-      <% end %>
+  <h3><%= @property.property_name %></h3>
+  <p>Description: <%= @property.description %></p>
+  <p>Price: $<%= @property.price%></p>
+  <p>Contact Person: <%= @property.user.fullname%></p>
+  <p>Email: <%= @property.user.email%></p>
+  Tags: <% @property.tags.each do |t|%>
+  <a href="/tag/<%= t.tag %>"><%= t.tag %></a>
+  <% end %>
 
-      <p><input type="submit" value="Edit"></p>
-    </form>
-    <br>
+  <br>
+  <% if session[:logged_in_user] == @property.user.id %>
+    <p><a href="/property/<%= @property.id %>/edit" ><button>Edit</button></a>
+    <a href='/property/<%= @property.id %>/delete'><button>Delete</button></a>
+  <% else  %>
+     <p><a href="/property/<%= @property.id %>" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
+  <% end %>
 
-   <a href="/property/<%= @property.id %>/edit" ><button>Edit</button></a>
-   <a href='/property/<%= @property.id %>/delete'><button>Delete</button></a>
-
-   <form action='/property/<%= @property.id %>/delete' method="post">
-        <input type="submit" value="Delete">
-    </form>
-
-     <a href="/property/<%= @property.id %>/book" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
-
+    <script>
+    function myFunction() {
+        alert("booking not yet worked out!");
+    }
+    </script>
 </div>
 
 
 
-
-<script>
-function myFunction() {
-    alert("booking not yet worked out!");
-}
-</script>

@@ -2,6 +2,10 @@
 <br>
 <h3>Hot Properties!</h3>
 <hr>
+<% if @error != "" %>
+      <p><%= @error %></p>
+    <% end %>
+
 <% @property.each do |p| %>
   <p>Place: <a href="/property/<%= p.id %>"><%= p.property_name %></a></p>
   <p>Description: <%= p.description %></p>
