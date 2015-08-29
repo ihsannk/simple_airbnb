@@ -27,12 +27,11 @@ end
 
 get "/property/:id" do
   @property = Property.find(params[:id])
-  session[:property_id] = @property.id
   erb :property
 end
 
 get "property/:id/edit" do
-  @edit_property = Property.find(session[:property_id])
+  @edit_property = Property.find(params[:id])
   erb :edit
 end
 
