@@ -35,7 +35,7 @@
     <br>
     <input type="text" name="input_tag" placeholder="Tags">
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Add Property">
   </form>
     <a href="/user/<%= @user.id%>"><button>Cancel</button></a>
 
@@ -46,18 +46,19 @@
   <form >
 
     <% @user.properties.each do |t|%>
-    <h3><a href="/property/<%= t.id %>"><%= t.property_name %></a></h3>
-    <p>Description: <%= t.description %></p>
-    <p>Price: <%= t.price%></p>
-    <p>Created by: <%= t.user.fullname %></p>
-    <p>Email: <%= t.user.email %></p>
-    Tags: <% t.tags.each do |p|%>
-      <a href="/tag/<%= p.tag %>"><%= p.tag %></a>
-      <% end %>
-
-    <hr style="border: dotted 1px;" />
+      <h3><a href="/property/<%= t.id %>"><%= t.property_name %></a></h3>
+      <p>Description: <%= t.description %></p>
+      <p>Price: <%= t.price%></p>
+      <p>Created by: <%= t.user.fullname %></p>
+      <p>Email: <%= t.user.email %></p>
+      Tags: <% t.tags.each do |p|%>
+        <a href="/tag/<%= p.tag %>"><%= p.tag %></a>
+        <% end %>
+      <hr style="border: dotted 1px;" />
+    <% end %>
   </form>
-<% end %>
+
+<h3>Your Bookings</h3>
 
 </div>
 

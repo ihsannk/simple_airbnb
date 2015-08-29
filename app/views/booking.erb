@@ -1,0 +1,6 @@
+<div class="container">
+  <p>Booking For:
+  <p><%= @property.property_name %></p>
+
+<input type="button" onclick="alert('Congratulations! you have booked [<%= @property.property_name %>], please contact <%= @property.user.fullname%> at <%= @property.user.email%> to arrange dates and details')" value="Book!">
+</div>

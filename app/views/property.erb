@@ -14,14 +14,8 @@
     <p><a href="/property/<%= @property.id %>/edit" ><button>Edit</button></a>
     <a href='/property/<%= @property.id %>/delete'><button>Delete</button></a>
   <% else  %>
-     <p><a href="/property/<%= @property.id %>" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
+     <p><a href="/property/<%= @property.id %>/book" style="text-decoration: none"><button>book this place!</button></a>
   <% end %>
-
-    <script>
-    function myFunction() {
-        alert("booking not yet worked out!");
-    }
-    </script>
 </div>
 
 

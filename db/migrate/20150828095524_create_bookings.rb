@@ -3,6 +3,8 @@ class CreateBookings < ActiveRecord::Migration
     create_table :bookings do |t|
       t.integer :user_id
       t.integer :property_id
+      t.date :check_in
+      t.date :check_out
 
       t.timestamps null: false
     end

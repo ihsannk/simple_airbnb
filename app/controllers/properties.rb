@@ -1,5 +1,5 @@
 post '/property' do
-  user = User.find(session[:user_id])
+  user = User.find(session[:logged_in_user])
 
   input_property_name = params[:input_property_name]
   input_description = params[:input_description]
