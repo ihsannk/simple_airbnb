@@ -1,6 +1,10 @@
   <div class="container">
 
   <h3>Signup</h3>
+  <% if @error != "" %>
+      <p><%= @error %></p>
+    <% end %>
+
      <form action="/signup" method="post">
         Full Name:<br>
         <input type="text" name="input_fullname" placeholder="Full Name">
@@ -11,8 +15,8 @@
         Password:<br>
         <input type="password" name="input_password" placeholder="Password">
         <br>
-        Confirm Password:<br>
         <input type="password" name="input_confirm_password" placeholder="Confirm Password">
+        <br>
         <br>
         <input type="submit" value="Sign Up!">
         </form>

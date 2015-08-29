@@ -1,19 +1,17 @@
 <div class="container">
   <form >
  <h2>Tag: <%= @tag.tag %></h2>
+ <hr>
   <% @tag.properties.each do |t|%>
-    <h3><%= t.property_name %></h3>
+    <h3><a href="/property/<%= t.id %>"><%= t.property_name %></a></h3>
     <p>Description: <%= t.description %></p>
     <p>Price: <%= t.price%></p>
     <p>Created by: <%= t.user.fullname %></p>
+    <p>Email: <%= t.user.email %></p>
+    Tags: <% t.tags.each do |p|%>
+      <a href="/tag/<%= p.tag %>"><%= p.tag %></a>
+      <% end %>
+
+    <hr>
   </form>
 <% end %>
-    <a href="/" style="text-decoration: none"><button onclick="myFunction()">book this place!</button></a>
-     <a href="/"><button>Home</button></a>
-</div>
-
-<script>
-function myFunction() {
-    alert("booking not yet worked out!");
-}
-</script>

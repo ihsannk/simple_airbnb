@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-get '/logout' do
- session.clear
+get '/tag/:tag' do
+  @tag = Tag.find_by(tag: params[:tag])
+  erb :tag
 end
-

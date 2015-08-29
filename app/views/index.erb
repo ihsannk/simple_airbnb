@@ -1,18 +1,16 @@
 <div class="container">
 <br>
+<h3>Hot Properties!</h3>
 <hr>
-
-<h3>hot properties!</h3>
 <% @property.each do |p| %>
   <p>Place: <a href="/property/<%= p.id %>"><%= p.property_name %></a></p>
   <p>Description: <%= p.description %></p>
   <p>Price: <%= p.price %></p>
   <p>Created by: <%= p.user.fullname %></p>
   Tags:<% p.tags.each do |t| %>
-    <p> <a href="/tag/<%= t.tag %>"><%= t.tag %></a></p>
+    <a href="/tag/<%= t.tag %>"><%= t.tag %></a>
     <%end%>
-
-  <p>---------</p>
+<hr>
 
  <% end %>
 

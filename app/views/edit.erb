@@ -1,0 +1,18 @@
+  <form action="/property/<%= @property.id%>/edit" method="post">
+      Place:
+      <br>
+      <input type="text" name="input_property_name" value="<%= @property.property_name%>">
+      <br>
+      Description:
+      <br>
+      <input type="text" name="input_description" value="<%= @property.description%>">
+      <br>
+      Price:<br><input type="text" name="input_price" value="<%= @property.price%>">
+      <br>
+      Tags:
+      <br>
+      <input type="text" name="input_tag" value="<%= @property.tag%>">
+      <br>
+      <input type="submit" value="Submit">
+  </form>
+  <a href="/"><button> Cancel</button></a>
